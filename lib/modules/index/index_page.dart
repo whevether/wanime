@@ -30,8 +30,8 @@ class IndexPage extends GetView<IndexController> {
               currentIndex: controller.index.value,
               onTap: controller.setIndex,
               type: BottomNavigationBarType.fixed,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
+              showSelectedLabels: true,
+              showUnselectedLabels: true,
               items: const [
                 BottomNavigationBarItem(
                   icon: Icon(Remix.bear_smile_line),

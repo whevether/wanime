@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 2.1.0
 
 environment:
-  sdk: '>=3.1.5 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,34 +34,34 @@ dependencies:
     sdk: flutter
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  remixicon: ^1.0.0
-  get: ^4.6.6
-  dio: ^5.3.3
-  hive: ^2.2.3
-  hive_flutter: ^1.1.0
-  crypton: ^2.2.1
-  crypto: ^3.0.3
-  logger: ^2.0.2+1
-  protobuf: ^3.1.0
-  intl: ^0.18.1
-  universal_html: ^2.2.4
-  html_unescape: ^2.0.0
-  flutter_smart_dialog: ^4.9.5+1
-  flutter_staggered_grid_view: ^0.7.0
-  tab_indicator_styler: ^2.0.0
-  multi_split_view: ^2.4.0
-  extended_image: ^8.1.1
-  flutter_swiper_view: ^1.1.8
-  easy_refresh: ^3.3.2+4
-  lottie: ^2.7.0
-  photo_view: ^0.14.0
+  cupertino_icons: ^1.0.6 #ios 风格图标
+  remixicon: ^1.0.0 # remix 图标
+  get: ^4.6.6 #状态以及路由管理
+  dio: ^5.4.0 #HTTP请求
+  hive: ^2.2.3 #使用 AES-256 进行严格加密
+  hive_flutter: ^1.1.0 #使用 AES-256 进行严格加密扩展功能
+  crypton: ^2.2.1 #用于非对称加密和数字签名
+  crypto: ^3.0.3 #SHA、MD5 和 HMAC 加密函数的实现
+  logger: ^2.0.2+1 #日志
+  protobuf: ^3.1.0 #用于 protobuf协议
+  intl: ^0.18.1 #多语言
+  universal_html: ^2.2.4 #简化跨平台开发和 HTML/XML 处理
+  html_unescape: ^2.0.0 #一个用于取消转义 HTML 的小型库
+  flutter_smart_dialog: ^4.9.6 #一个优雅的Flutter Dialog解决方案，轻松实现Toast、Loading和自定义Dialog
+  flutter_staggered_grid_view: ^0.7.0 #提供了 Flutter 网格布局的集合
+  tab_indicator_styler: ^2.0.0 #直接将漂亮且流行的选项卡指示器添加到默认的 Flutter TabBar
+  multi_split_view: ^2.4.0 #为 Flutter 提供水平或垂直的多个分割视图。
+  extended_image: ^8.2.0 #官方扩展图像
+  flutter_swiper_view: ^1.1.8 # swiper（轮播）
+  easy_refresh: ^3.3.4 #上拉下拉刷新
+  lottie: ^2.7.0 #lottie动画
+  photo_view: ^0.14.0 #照片视图提供了手势敏感的可缩放小部件
   preload_page_view: ^0.2.0 #预先加载page view
-  scrollable_positioned_list: ^0.3.8
-  url_launcher: ^6.2.1 #打开链接
+  scrollable_positioned_list: ^0.3.8 #带有辅助方法的列表，用于以编程方式滚动到某个项目
+  url_launcher: ^6.2.2 #打开链接
   webview_flutter: ^4.4.2 #webview
-  package_info_plus: ^4.2.0 #包信息
-  flutter_widget_from_html_core: ^0.14.6 #html 转widget
+  package_info_plus: ^5.0.1 #包信息
+  flutter_widget_from_html_core: ^0.14.10+1 #html 转widget
   share_plus: ^7.2.1 #分享
   permission_handler: ^11.0.1 #权限检查
   path_provider: ^2.1.1 #常用目录
@@ -79,7 +79,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

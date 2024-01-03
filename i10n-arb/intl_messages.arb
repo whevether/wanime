@@ -1,0 +1,110 @@
+{
+  "@@last_modified": "2024-01-03T10:17:04.972414",
+  "@@locale": "en_US",
+  "title": "wchat",
+  "@title": {
+    "description": "Title for the  application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language of application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme of application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Title of home page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "find": "Find",
+  "@find": {
+    "description": "Title of find page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "chat": "Chat",
+  "@chat": {
+    "description": "Title of chat page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "my": "My",
+  "@my": {
+    "description": "Title of my page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "yes": "Yes",
+  "@yes": {
+    "description": "yes action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutTip": "Are you sure to logout?",
+  "@logoutTip": {
+    "description": "Logout tip",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userName": "User Name",
+  "@userName": {
+    "description": "User account",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNameRequired": "User name can not be empty!",
+  "@userNameRequired": {
+    "description": "user name required",
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Password",
+  "@password": {
+    "description": "password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "paswordRequired": "password can not be empty!",
+  "@paswordRequired": {
+    "description": "password required",
+    "type": "text",
+    "placeholders": {}
+  },
+  "remainingMessage": "{howMany,plural, =0{There are no left}=1{There is {howMany} left}other{There are {howMany} left}}",
+  "@remainingMessage": {
+    "description": "How many remain after archiving.",
+    "type": "text",
+    "placeholders": {
+      "howMany": {
+        "example": 42
+      }
+    }
+  }
+}

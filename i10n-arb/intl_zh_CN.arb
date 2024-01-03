@@ -1,0 +1,110 @@
+{
+  "@@last_modified": "2024-01-03T09:56:11.563256",
+  "@@locale": "zh_CN",
+  "title": "wchat",
+  "@title": {
+    "description": "Title for the  application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "language": "语言",
+  "@language": {
+    "description": "Language of application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "theme": "主题",
+  "@theme": {
+    "description": "Theme of application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "登录",
+  "@login": {
+    "description": "Login action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "logout": "退出登录",
+  "@logout": {
+    "description": "Logout action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "主页",
+  "@home": {
+    "description": "Title of home page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "find": "发现",
+  "@find": {
+    "description": "Title of find page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "chat": "聊天",
+  "@chat": {
+    "description": "Title of chat page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "my": "我的",
+  "@my": {
+    "description": "Title of my page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "yes": "确定",
+  "@yes": {
+    "description": "yes action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "取消",
+  "@cancel": {
+    "description": "Cancel action",
+    "type": "text",
+    "placeholders": {}
+  },
+  "logoutTip": "确定退出登录?",
+  "@logoutTip": {
+    "description": "Logout tip",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userName": "用户名",
+  "@userName": {
+    "description": "User account",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNameRequired": "用户名不能为空!",
+  "@userNameRequired": {
+    "description": "user name required",
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "密码",
+  "@password": {
+    "description": "password",
+    "type": "text",
+    "placeholders": {}
+  },
+  "paswordRequired": "密码不能为空!",
+  "@paswordRequired": {
+    "description": "password required",
+    "type": "text",
+    "placeholders": {}
+  },
+  "remainingMessage": "{howMany,plural, =0{没有了}=1{有 {howMany} 条}other{有 {howMany} 条}}",
+  "@remainingMessage": {
+    "description": "How many remain after archiving.",
+    "type": "text",
+    "placeholders": {
+      "howMany": {
+        "example": 42
+      }
+    }
+  }
+}

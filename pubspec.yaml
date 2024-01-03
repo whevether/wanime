@@ -70,6 +70,7 @@ dependencies:
   battery_plus: ^4.1.0 #电池状态
   file_selector: ^1.0.1 #文件选择
   windows_single_instance: ^1.0.0 #windows 单实例
+  intl_translation: ^0.18.2 #多语言 生成
 dev_dependencies:
   flutter_test:
     sdk: flutter

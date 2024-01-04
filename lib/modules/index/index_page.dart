@@ -147,17 +147,24 @@ class IndexPage extends GetView<IndexController> {
 
   /// 子路由
   Widget _buildContentNavigator() {
+    bool onCanPop() {
+      if (Navigator.canPop(Get.context!)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
     /// 拦截子路由的返回
-    return WillPopScope(
-      onWillPop: () async {
-        if (Navigator.canPop(Get.context!)) {
-          return true;
+    return PopScope(
+      canPop: onCanPop(),
+      onPopInvoked: (bool didPop) {
+        if (didPop) {
+          return;
         }
         if (AppNavigator.subNavigatorKey!.currentState!.canPop()) {
           AppNavigator.subNavigatorKey!.currentState!.pop();
-          return false;
         }
-        return true;
       },
       child: ClipRect(
         child: Navigator(

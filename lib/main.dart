@@ -28,8 +28,8 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:windows_single_instance/windows_single_instance.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() {
-  runZonedGuarded(
+Future<void> main() async {
+  await runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
       if (Platform.isWindows) {

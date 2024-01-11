@@ -19,8 +19,6 @@ class AppSettingsService extends GetxController {
         .getValue(LocalStorageService.kComicReaderFullScreen, true);
     comicReaderShowStatus.value = LocalStorageService.instance
         .getValue(LocalStorageService.kComicReaderShowStatus, true);
-    comicReaderShowStatus.value = LocalStorageService.instance
-        .getValue(LocalStorageService.kComicReaderShowStatus, true);
     comicReaderShowViewPoint.value = LocalStorageService.instance
         .getValue(LocalStorageService.kComicReaderShowViewPoint, true);
     comicReaderLeftHandMode.value = LocalStorageService.instance

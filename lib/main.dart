@@ -28,30 +28,30 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:windows_single_instance/windows_single_instance.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  if (Platform.isWindows) {
-    await WindowsSingleInstance.ensureSingleInstance(
-      [],
-      "com.xycz.dmzjx",
-      onSecondWindow: (args) {
-        Log.logPrint(args);
-      },
-    );
-  }
-  await Hive.initFlutter();
-  //初始化服务
-  await initServices();
-  //设置状态栏为透明
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-  SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.dark,
-    systemNavigationBarColor: Colors.transparent,
-  );
-  SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-  runZonedGuarded(
-    () {
+Future<void> main() async {
+  await runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      if (Platform.isWindows) {
+        await WindowsSingleInstance.ensureSingleInstance(
+          [],
+          "com.xycz.dmzjx",
+          onSecondWindow: (args) {
+            Log.logPrint(args);
+          },
+        );
+      }
+      await Hive.initFlutter();
+      //初始化服务
+      await initServices();
+      //设置状态栏为透明
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+      SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        systemNavigationBarColor: Colors.transparent,
+      );
+      SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
       runApp(const DMZJApp());
     },
     (error, stackTrace) {
@@ -124,7 +124,8 @@ class DMZJApp extends StatelessWidget {
           () => MediaQuery(
             data: AppSettingsService.instance.useSystemFontSize.value
                 ? MediaQuery.of(context)
-                : MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
+                : MediaQuery.of(context)
+                    .copyWith(textScaler: const TextScaler.linear(1.0)),
             child: child!,
           ),
         ),

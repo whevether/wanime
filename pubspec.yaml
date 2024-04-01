@@ -35,17 +35,17 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6 #ios 风格图标
-  remixicon: ^1.0.0 # remix 图标
+  remixicon: ^1.2.0 # remix 图标
   get: ^4.6.6 #状态以及路由管理
-  dio: ^5.4.0 #HTTP请求
+  dio: ^5.4.2+1 #HTTP请求
   hive: ^2.2.3 #使用 AES-256 进行严格加密
   hive_flutter: ^1.1.0 #使用 AES-256 进行严格加密扩展功能
   crypton: ^2.2.1 #用于非对称加密和数字签名
   crypto: ^3.0.3 #SHA、MD5 和 HMAC 加密函数的实现
-  logger: ^2.0.2+1 #日志
+  logger: ^2.2.0 #日志
   protobuf: ^3.1.0 #用于 protobuf协议
   intl: ^0.18.1 #多语言
-  universal_html: ^2.2.4 #简化跨平台开发和 HTML/XML 处理
+  universal_html: ^2.2.1 #简化跨平台开发和 HTML/XML 处理
   html_unescape: ^2.0.0 #一个用于取消转义 HTML 的小型库
   flutter_smart_dialog: ^4.9.6 #一个优雅的Flutter Dialog解决方案，轻松实现Toast、Loading和自定义Dialog
   flutter_staggered_grid_view: ^0.7.0 #提供了 Flutter 网格布局的集合
@@ -54,23 +54,23 @@ dependencies:
   extended_image: ^8.2.0 #官方扩展图像
   flutter_swiper_view: ^1.1.8 # swiper（轮播）
   easy_refresh: ^3.3.4 #上拉下拉刷新
-  lottie: ^2.7.0 #lottie动画
+  lottie: ^3.1.0 #lottie动画
   photo_view: ^0.14.0 #照片视图提供了手势敏感的可缩放小部件
   preload_page_view: ^0.2.0 #预先加载page view
   scrollable_positioned_list: ^0.3.8 #带有辅助方法的列表，用于以编程方式滚动到某个项目
-  url_launcher: ^6.2.2 #打开链接
-  webview_flutter: ^4.4.2 #webview
-  package_info_plus: ^5.0.1 #包信息
-  flutter_widget_from_html_core: ^0.14.10+1 #html 转widget
-  share_plus: ^7.2.1 #分享
-  permission_handler: ^11.0.1 #权限检查
-  path_provider: ^2.1.1 #常用目录
+  url_launcher: ^6.2.5 #打开链接
+  webview_flutter: ^4.0.5 #webview
+  package_info_plus: ^6.0.0 #包信息
+  flutter_widget_from_html_core: ^0.10.0 #html 转widget
+  share_plus: ^8.0.2 #分享
+  permission_handler: ^11.3.1 #权限检查
+  path_provider: ^2.1.2 #常用目录
   image_gallery_saver: ^2.0.3 #保存图片至相册
-  connectivity_plus: ^5.0.1 #连接状态
-  battery_plus: ^4.1.0 #电池状态
-  file_selector: ^1.0.1 #文件选择
-  windows_single_instance: ^1.0.0 #windows 单实例
-  intl_translation: ^0.18.2 #多语言 生成
+  connectivity_plus: ^6.0.1 #连接状态
+  battery_plus: ^6.0.0 #电池状态
+  file_selector: ^1.0.3 #文件选择
+  windows_single_instance: ^1.0.1 #windows 单实例
+  intl_translation: ^0.19.0 #多语言 生成
 dev_dependencies:
   flutter_test:
     sdk: flutter

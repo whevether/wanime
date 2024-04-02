@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:wanime/app/log.dart';
 import 'package:wanime/models/db/novel_download_info.dart';
@@ -29,10 +30,9 @@ class NovelDownloadService extends GetxService {
   String savePath = "";
 
   /// 连接信息监听
-  StreamSubscription<ConnectivityResult>? connectivitySubscription;
-
-  /// 当前连接类型
-  ConnectivityResult? connectivityType;
+  late StreamSubscription<List<ConnectivityResult>> connectivitySubscription;
+   /// 连接类型
+  var connectivityType = <ConnectivityResult>[];
 
   /// 当前正在下载的数量
   var currentNum = 0;
@@ -57,7 +57,7 @@ class NovelDownloadService extends GetxService {
     try {
       var connectivity = Connectivity();
       connectivitySubscription = connectivity.onConnectivityChanged
-          .listen((ConnectivityResult result) {
+          .listen((List<ConnectivityResult> result) {
         networkChanged(result);
       });
       connectivityType = await connectivity.checkConnectivity();
@@ -69,11 +69,11 @@ class NovelDownloadService extends GetxService {
   }
 
   /// 网络变更
-  void networkChanged(ConnectivityResult type) {
-    if (connectivityType != type && type == ConnectivityResult.mobile) {
+  void networkChanged(List<ConnectivityResult> type) {
+    if (!listEquals(connectivityType, type) && type.contains(ConnectivityResult.mobile)) {
       //切换至流量
       switchCellular();
-    } else if (connectivityType != type && type == ConnectivityResult.none) {
+    } else if (!listEquals(connectivityType, type) && type.contains(ConnectivityResult.none)) {
       //网络断开
       switchNoNetwork();
     } else {

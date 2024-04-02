@@ -26,9 +26,9 @@ class NovelReaderPage extends GetView<NovelReaderController> {
 
   @override
   Widget build(BuildContext context) {
-    return RawKeyboardListener(
-      onKey: (e) {
-        if (e.runtimeType == RawKeyUpEvent) {
+    return KeyboardListener(
+      onKeyEvent: (e) {
+        if (e.runtimeType == KeyUpEvent) {
           controller.keyDown(e.logicalKey);
           Log.d(e.toString());
         }
@@ -557,39 +557,31 @@ class NovelReaderPage extends GetView<NovelReaderController> {
   }
 
   Widget buildConnectivity() {
-    var connectivityType = controller.connectivityType.value;
+    var connectivityType = controller.connectivityType;
     IconData icon = Remix.wifi_line;
     var name = "WiFi";
-    switch (connectivityType) {
-      case ConnectivityResult.bluetooth:
-        icon = Remix.wifi_line;
-        name = "蓝牙";
-        break;
-      case ConnectivityResult.ethernet:
-        icon = Remix.computer_line;
-        name = "有线";
-        break;
-      case ConnectivityResult.mobile:
-        icon = Remix.base_station_line;
-        name = "流量";
-        break;
-      case ConnectivityResult.wifi:
-        icon = Remix.wifi_line;
-        name = "WiFi";
-        break;
-      case ConnectivityResult.vpn:
-        icon = Remix.shield_keyhole_line;
-        name = "VPN";
-        break;
-      case ConnectivityResult.none:
-        icon = Remix.wifi_off_line;
-        name = "无网络";
-        break;
-      case ConnectivityResult.other:
-        icon = Remix.question_line;
-        name = "未知";
-        break;
-      default:
+
+    if (connectivityType.contains(ConnectivityResult.bluetooth)) {
+      icon = Remix.wifi_line;
+      name = "蓝牙";
+    } else if (connectivityType.contains(ConnectivityResult.ethernet)) {
+      icon = Remix.computer_line;
+      name = "有线";
+    } else if (connectivityType.contains(ConnectivityResult.mobile)) {
+      icon = Remix.base_station_line;
+      name = "流量";
+    } else if (connectivityType.contains(ConnectivityResult.wifi)) {
+      icon = Remix.wifi_line;
+      name = "WiFi";
+    } else if (connectivityType.contains(ConnectivityResult.vpn)) {
+      icon = Remix.shield_keyhole_line;
+      name = "VPN";
+    } else if (connectivityType.contains(ConnectivityResult.none)) {
+      icon = Remix.wifi_off_line;
+      name = "无网络";
+    } else if (connectivityType.contains(ConnectivityResult.other)) {
+      icon = Remix.question_line;
+      name = "未知";
     }
     return Row(
       mainAxisSize: MainAxisSize.min,

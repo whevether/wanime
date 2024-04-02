@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:battery_plus/battery_plus.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:easy_refresh/easy_refresh.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wanime/app/app_constant.dart';
@@ -64,7 +65,7 @@ class ComicReaderController extends BaseController {
       Rx<ComicChapterDetail>(ComicChapterDetail.empty());
 
   /// 连接信息监听
-  StreamSubscription<ConnectivityResult>? connectivitySubscription;
+  late StreamSubscription<List<ConnectivityResult>> connectivitySubscription;
 
   /// 电量信息监听
   StreamSubscription<BatteryState>? batterySubscription;
@@ -97,8 +98,7 @@ class ComicReaderController extends BaseController {
   RxList<ComicViewPointModel> viewPoints = RxList<ComicViewPointModel>();
 
   /// 连接类型
-  Rx<ConnectivityResult> connectivityType =
-      Rx<ConnectivityResult>(ConnectivityResult.other);
+  var connectivityType = <ConnectivityResult>[ConnectivityResult.other].obs;
 
   /// 电量信息
   Rx<int> batteryLevel = 0.obs;
@@ -156,10 +156,10 @@ class ComicReaderController extends BaseController {
   void initConnectivity() async {
     var connectivity = Connectivity();
     connectivitySubscription =
-        connectivity.onConnectivityChanged.listen((ConnectivityResult result) {
+        connectivity.onConnectivityChanged.listen((List<ConnectivityResult> result) {
       //提醒
-      if (connectivityType.value != result &&
-          result == ConnectivityResult.mobile) {
+      if (!listEquals(connectivityType, result) &&
+          result.contains(ConnectivityResult.mobile)) {
         SmartDialog.showToast("您已切换至数据网络，请注意流量消耗");
       }
       connectivityType.value = result;
@@ -170,7 +170,7 @@ class ComicReaderController extends BaseController {
   @override
   void onClose() {
     focusNode.dispose();
-    connectivitySubscription?.cancel();
+    connectivitySubscription.cancel();
     batterySubscription?.cancel();
     exitFull();
     itemPositionsListener.itemPositions.removeListener(updateItemPosition);

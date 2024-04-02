@@ -1,6 +1,6 @@
 {
   "version": "0.0.3",
-  "version_num": 00300,
+  "version_num": 300,
   "version_desc": "1. 修复一些问题 #204",
   "prerelease":false,
   "download_url": "https://github.com/whevether/wanime"

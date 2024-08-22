@@ -20,7 +20,7 @@ Request Query：${err.requestOptions.queryParameters}
 Request Data：${err.requestOptions.data}
 Request Headers：${err.requestOptions.headers}
 Response Headers：${err.response?.headers.map}
-Response Data：${err.response?.data}''', err.stackTrace ?? StackTrace.current);
+Response Data：${err.response?.data}''', err.stackTrace);
     super.onError(err, handler);
   }
 

@@ -5,57 +5,69 @@ plugins {
 }
 
 def localProperties = new Properties()
-def localPropertiesFile = rootProject.file('local.properties')
-if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
-        localProperties.load(reader)
-    }
-}
 
-def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
-if (flutterVersionCode == null) {
-    flutterVersionCode = '1'
+// 加载打包key
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+       localProperties.load(new FileInputStream(keystorePropertiesFile))
 }
-
-def flutterVersionName = localProperties.getProperty('flutter.versionName')
-if (flutterVersionName == null) {
-    flutterVersionName = '1.0'
-}
-
 android {
-    namespace "com.example.wanime"
-    compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+    namespace = "com.fengjing.wanime"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8
     }
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
+    // sourceSets {
+    //     main.java.srcDirs += 'src/main/kotlin'
+    // }
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.wanime"
+        applicationId = "com.fengjing.wanime"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 21
-        targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        multiDexEnabled = true
+       ndk {
+           abiFilters "arm64-v8a", "x86_64"
+       }
     }
-
+    signingConfigs {
+       release {
+           keyAlias  localProperties['keyAlias']
+           keyPassword  localProperties['keyPassword']
+           storeFile localProperties['storeFile'] ? file(localProperties['storeFile']) : null
+           storePassword  localProperties['storePassword']
+        //    minifyEnabled true
+        //     shrinkResources false
+        //    useProguard true
+       }
+   }
     buildTypes {
+        debug {
+            signingConfig = signingConfigs.debug
+        }
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig = signingConfigs.release
+            // minifyEnabled = true
+            // shrinkResources = true
+            // proguardFiles = getDefaultProguardFile(
+            //             'proguard-android-optimize.txt'),
+            //             'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
@@ -64,4 +76,6 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation 'androidx.multidex:multidex:2.0.1'
+}

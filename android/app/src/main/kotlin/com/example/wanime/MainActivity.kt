@@ -1,4 +1,4 @@
-package com.example.wanime
+package com.fengjing.wanime
 
 import io.flutter.embedding.android.FlutterActivity
 

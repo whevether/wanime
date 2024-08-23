@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8 #ios 风格图标
   remixicon: ^1.2.0 # remix 图标
   get: ^4.6.6 #状态以及路由管理
-  dio: ^5.4.3+1 #HTTP请求
+  dio: ^5.6.0 #HTTP请求
   hive: ^2.2.3 #使用 AES-256 进行严格加密
   hive_flutter: ^1.1.0 #使用 AES-256 进行严格加密扩展功能
   crypton: ^2.2.1 #用于非对称加密和数字签名
@@ -60,13 +60,16 @@ dependencies:
   scrollable_positioned_list: ^0.3.8 #带有辅助方法的列表，用于以编程方式滚动到某个项目
   url_launcher: ^6.2.6 #打开链接
   webview_flutter: ^4.7.0 #webview
-  package_info_plus: ^8.0.0 #包信息
+  package_info_plus: ^8.0.1 #包信息
   flutter_widget_from_html_core: ^0.15.1 #html 转widget
-  share_plus: ^9.0.0 #分享
+  share_plus: ^10.0.0 #分享
   permission_handler: ^11.3.1 #权限检查
   path_provider: ^2.1.3 #常用目录
-  image_gallery_saver: ^2.0.3 #保存图片至相册
-  connectivity_plus: ^6.0.3 #连接状态
+  image_gallery_saver:
+   git: 
+      url: https://github.com/whevether/image_gallery_saver.git
+      ref: main #保存图片至相册
+  connectivity_plus: ^6.0.4 #连接状态
   battery_plus: ^6.0.1 #电池状态
   file_selector: ^1.0.3 #文件选择
   windows_single_instance: ^1.0.1 #windows 单实例

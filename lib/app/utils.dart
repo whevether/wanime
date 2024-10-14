@@ -1,21 +1,19 @@
 import 'dart:io';
 
-import 'package:extended_image/extended_image.dart';
+import 'package:dio/dio.dart';
 import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gal/gal.dart';
 import 'package:wanime/app/app_style.dart';
 import 'package:wanime/app/log.dart';
 import 'package:wanime/requests/common_request.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
-// ignore: depend_on_referenced_packages
-import 'package:path/path.dart' as p;
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -99,30 +97,27 @@ class Utils {
       return;
     }
     try {
-      Uint8List? data;
       if (url.startsWith("http")) {
-        var provider = ExtendedNetworkImageProvider(url, cache: true);
-        data = await provider.getNetworkImageData();
-      } else {
-        data = await File(url).readAsBytes();
-      }
-
-      if (data == null) {
-        SmartDialog.showToast("图片保存失败");
-        return;
+        var cacheDir = await getTemporaryDirectory();
+        List<String> urlList = url.split('/');
+        String path = '${cacheDir.path}/${urlList.last}';
+        await Dio().download(url,path);
+        url = path;
       }
       if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
-        saveImageDetktop(p.basename(url), data);
+        var data = await File(url).readAsBytes();
+        saveImageDetktop(url, data);
       } else {
-        var cacheDir = await getTemporaryDirectory();
-        var file = File(p.join(cacheDir.path, p.basename(url)));
-        await file.writeAsBytes(data);
-        final result = await ImageGallerySaver.saveFile(
-          file.path,
-          name: p.basename(url),
-          isReturnPathOfIOS: true,
-        );
-        Log.d(result.toString());
+        // var cacheDir = await getTemporaryDirectory();
+        // var file = File('${cacheDir.path}/$url');
+        // await file.writeAsBytes(data);
+        // final result = await ImageGallerySaver.saveFile(
+        //   file.path,
+        //   name: url,
+        //   isReturnPathOfIOS: true,
+        // );
+        // Log.d(result.toString());
+        await Gal.putImage(url);
         SmartDialog.showToast("保存成功");
       }
     } catch (e) {

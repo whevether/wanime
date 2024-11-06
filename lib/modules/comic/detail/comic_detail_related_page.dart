@@ -41,7 +41,7 @@ class ComicDetailRelatedPage extends StatelessWidget {
                         AppNavigator.toComicAuthorDetail(e.authorId);
                       }),
                     )
-                    .toList(),
+                    ,
                 buildCard("同类题材作品", related.themeComics),
                 buildCard("轻小说", related.novels, isComic: false),
               ],

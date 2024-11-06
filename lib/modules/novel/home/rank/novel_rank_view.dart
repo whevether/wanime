@@ -13,9 +13,8 @@ import 'package:get/get.dart';
 
 class NovelRankView extends StatelessWidget {
   final NovelRankController controller;
-  NovelRankView({Key? key})
-      : controller = Get.put(NovelRankController()),
-        super(key: key);
+  NovelRankView({super.key})
+      : controller = Get.put(NovelRankController());
 
   @override
   Widget build(BuildContext context) {

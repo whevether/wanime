@@ -8,8 +8,7 @@ class Log {
       errorMethodCount: 8,
       lineLength: 120,
       colors: true,
-      printEmojis: true,
-      printTime: false,
+      printEmojis: true
     ),
   );
 

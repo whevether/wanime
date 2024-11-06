@@ -21,7 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
   @override
   String get localeName => 'zh_CN';
 
-  static m0(howMany) => "${Intl.plural(howMany, zero: '没有了', one: '有 ${howMany} 条', other: '有 ${howMany} 条')}";
+  static m0(howMany) => Intl.plural(howMany, zero: '没有了', one: '有 ${howMany} 条', other: '有 ${howMany} 条');
 
   @override
   final Map<String, dynamic> messages = _notInlinedMessages(_notInlinedMessages);

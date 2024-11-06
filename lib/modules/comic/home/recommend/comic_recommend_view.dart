@@ -12,9 +12,8 @@ import 'package:remixicon/remixicon.dart';
 
 class ComicRecommendView extends StatelessWidget {
   final ComicRecommendController controller;
-  ComicRecommendView({Key? key})
-      : controller = Get.put(ComicRecommendController()),
-        super(key: key);
+  ComicRecommendView({super.key})
+      : controller = Get.put(ComicRecommendController());
 
   @override
   Widget build(BuildContext context) {

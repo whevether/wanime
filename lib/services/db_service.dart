@@ -6,7 +6,7 @@ import 'package:wanime/models/db/novel_history.dart';
 import 'package:wanime/models/user/comic_history_model.dart';
 import 'package:wanime/models/user/novel_history_model.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
 class DBService extends GetxService {

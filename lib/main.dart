@@ -17,7 +17,7 @@ import 'package:wanime/models/db/novel_history.dart';
 import 'package:wanime/services/comic_download_service.dart';
 import 'package:wanime/services/novel_download_service.dart';
 import 'package:wanime/services/db_service.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:wanime/routes/app_pages.dart';
 import 'package:wanime/services/local_storage_service.dart';
 import 'package:wanime/services/user_service.dart';

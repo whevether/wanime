@@ -1,6 +1,6 @@
 import 'package:wanime/app/log.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 // ignore: depend_on_referenced_packages

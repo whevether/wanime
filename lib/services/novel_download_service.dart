@@ -12,7 +12,7 @@ import 'package:wanime/models/novel/novel_detail_model.dart';
 import 'package:wanime/services/app_settings_service.dart';
 import 'package:wanime/services/download_task/novel_downloader.dart';
 import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 // ignore: depend_on_referenced_packages
 import 'package:collection/collection.dart';

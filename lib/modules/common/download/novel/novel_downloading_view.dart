@@ -151,7 +151,7 @@ class NovelDownloadingView extends StatelessWidget {
     );
   }
 
-  String parseStatus(DownloadStatus status) {
+  String parseStatus(DownloadStatus? status) {
     switch (status) {
       case DownloadStatus.cancel:
         return "已取消";

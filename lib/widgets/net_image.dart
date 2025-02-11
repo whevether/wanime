@@ -46,7 +46,7 @@ class _NetImageState extends State<NetImage>
     if (picUrl.isEmpty) {
       return Container(
         decoration: BoxDecoration(
-          color: Colors.grey.withOpacity(.1),
+          color: Colors.grey.withValues(alpha:.1),
         ),
         child: const Icon(
           Icons.image,
@@ -94,7 +94,7 @@ class _NetImageState extends State<NetImage>
             }
             return Container(
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(.1),
+                color: Colors.grey.withValues(alpha:.1),
               ),
               child: const Icon(
                 Icons.image,
@@ -107,7 +107,7 @@ class _NetImageState extends State<NetImage>
             animationController.reset();
             return Container(
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(.1),
+                color: Colors.grey.withValues(alpha:.1),
               ),
               child: const Icon(
                 Icons.broken_image,

@@ -15,7 +15,7 @@ class AppStyle {
       centerTitle: false,
       shape: Border(
         bottom: BorderSide(
-          color: Colors.grey.withOpacity(.2),
+          color: Colors.grey.withValues(alpha:.2),
           width: 1,
         ),
       ),
@@ -46,7 +46,7 @@ class AppStyle {
       centerTitle: false,
       shape: Border(
         bottom: BorderSide(
-          color: Colors.grey.withOpacity(.2),
+          color: Colors.grey.withValues(alpha:.2),
           width: 1,
         ),
       ),

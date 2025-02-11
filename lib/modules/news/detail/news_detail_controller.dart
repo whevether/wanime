@@ -326,7 +326,7 @@ getImgLinks();
             ),
             Divider(
               height: 1.0,
-              color: Colors.grey.withOpacity(.2),
+              color: Colors.grey.withValues(alpha:.2),
             ),
             Obx(
               () => ListTile(

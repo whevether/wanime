@@ -23,7 +23,7 @@ class LocalImage extends StatelessWidget {
     if (path.isEmpty) {
       return Container(
         decoration: BoxDecoration(
-          color: Colors.grey.withOpacity(.1),
+          color: Colors.grey.withValues(alpha:.1),
         ),
         child: const Icon(
           Icons.image,
@@ -40,7 +40,7 @@ class LocalImage extends StatelessWidget {
           if (snap.hasError) {
             return Container(
               decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(.1),
+                color: Colors.grey.withValues(alpha:.1),
               ),
               child: const Icon(
                 Icons.broken_image,

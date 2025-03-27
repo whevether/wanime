@@ -35,8 +35,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8 #ios 风格图标
-  remixicon: ^1.3.0 # remix 图标
-  get: ^4.6.6 #状态以及路由管理
+  remixicon: ^1.4.1 # remix 图标
+  get: ^4.7.2 #状态以及路由管理
   dio: ^5.8.0+1 #HTTP请求
   hive_ce: ^2.10.0 #轻量级快速键值数据库
   hive_ce_flutter: ^2.2.0 #Hive的扩展。使在Flutter应用程序中更容易使用Hive。
@@ -50,7 +50,7 @@ dependencies:
   flutter_smart_dialog: ^4.9.8+5 #一个优雅的Flutter Dialog解决方案，轻松实现Toast、Loading和自定义Dialog
   flutter_staggered_grid_view: ^0.7.0 #提供了 Flutter 网格布局的集合
   multi_split_view: ^3.6.0 #为 Flutter 提供水平或垂直的多个分割视图。
-  extended_image: ^9.1.0 #官方扩展图像
+  extended_image: ^10.0.0 #官方扩展图像
   flutter_swiper_view:
     git: 
       url: https://github.com/whevether/flutter_swiper_view.git
@@ -63,9 +63,9 @@ dependencies:
   url_launcher: ^6.3.1 #打开链接
   webview_flutter: ^4.10.0 #webview
   package_info_plus: ^8.2.0 #包信息
-  flutter_widget_from_html_core: ^0.15.2 #html 转widget
+  flutter_widget_from_html_core: ^0.16.0 #html 转widget
   share_plus: ^10.1.4 #分享
-  permission_handler: ^11.3.1 #权限检查
+  permission_handler: ^11.4.0 #权限检查
   path_provider: ^2.1.5 #常用目录
   gal: ^2.3.0 #保存图片/视频
   connectivity_plus: ^6.1.2 #连接状态
@@ -83,6 +83,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+dependency_overrides:
+  extended_image: ^10.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

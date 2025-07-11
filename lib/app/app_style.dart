@@ -36,7 +36,7 @@ class AppStyle {
     primaryColor: Colors.blue,
     colorScheme: AppColor.colorSchemeDark,
     scaffoldBackgroundColor: Colors.black,
-    tabBarTheme: const TabBarTheme(
+    tabBarTheme: const TabBarThemeData(
       indicatorColor: Colors.blue,
     ),
     appBarTheme: AppBarTheme(

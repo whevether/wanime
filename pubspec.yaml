@@ -38,16 +38,16 @@ dependencies:
   remixicon: ^1.4.1 # remix 图标
   get: ^4.7.2 #状态以及路由管理
   dio: ^5.8.0+1 #HTTP请求
-  hive_ce: ^2.10.0 #轻量级快速键值数据库
-  hive_ce_flutter: ^2.2.0 #Hive的扩展。使在Flutter应用程序中更容易使用Hive。
+  hive_ce: ^2.11.3 #轻量级快速键值数据库
+  hive_ce_flutter: ^2.3.1 #Hive的扩展。使在Flutter应用程序中更容易使用Hive。
   crypton: ^2.2.1 #用于非对称加密和数字签名
   crypto: ^3.0.6 #SHA、MD5 和 HMAC 加密函数的实现
-  logger: ^2.5.0 #日志
-  protobuf: ^4.0.0 #用于 protobuf协议
-  intl: ^0.19.0 #多语言
+  logger: ^2.6.0 #日志
+  protobuf: ^4.1.0 #用于 protobuf协议
+  intl: ^0.20.2 #多语言
   universal_html: ^2.2.4 #简化跨平台开发和 HTML/XML 处理
   html_unescape: ^2.0.0 #一个用于取消转义 HTML 的小型库
-  flutter_smart_dialog: ^4.9.8+5 #一个优雅的Flutter Dialog解决方案，轻松实现Toast、Loading和自定义Dialog
+  flutter_smart_dialog: ^4.9.8+8 #一个优雅的Flutter Dialog解决方案，轻松实现Toast、Loading和自定义Dialog
   flutter_staggered_grid_view: ^0.7.0 #提供了 Flutter 网格布局的集合
   multi_split_view: ^3.6.0 #为 Flutter 提供水平或垂直的多个分割视图。
   extended_image: ^10.0.1 #官方扩展图像
@@ -60,16 +60,16 @@ dependencies:
   photo_view: ^0.15.0 #照片视图提供了手势敏感的可缩放小部件
   preload_page_view: ^0.2.0 #预先加载page view
   scrollable_positioned_list: ^0.3.8 #带有辅助方法的列表，用于以编程方式滚动到某个项目
-  url_launcher: ^6.3.1 #打开链接
-  webview_flutter: ^4.10.0 #webview
-  package_info_plus: ^8.2.0 #包信息
+  url_launcher: ^6.3.2 #打开链接
+  webview_flutter: ^4.13.0 #webview
+  package_info_plus: ^8.3.0 #包信息
   flutter_widget_from_html_core: ^0.16.0 #html 转widget
   share_plus: ^11.0.0 #分享
-  permission_handler: ^12.0.0+1 #权限检查
+  permission_handler: ^12.0.1 #权限检查
   path_provider: ^2.1.5 #常用目录
-  gal: ^2.3.0 #保存图片/视频
-  connectivity_plus: ^6.1.2 #连接状态
-  battery_plus: ^6.2.1 #电池状态
+  gal: ^2.3.1 #保存图片/视频
+  connectivity_plus: ^6.1.4 #连接状态
+  battery_plus: ^6.2.2 #电池状态
   file_selector: ^1.0.3 #文件选择
   windows_single_instance: ^1.0.1 #windows 单实例
   intl_translation: ^0.20.1 #多语言生成

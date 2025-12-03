@@ -21,7 +21,7 @@ class MessageLookup extends MessageLookupByLibrary {
   @override
   String get localeName => 'en_US';
 
-  static m0(howMany) => Intl.plural(howMany, zero: 'There are no left', one: 'There is ${howMany} left', other: 'There are ${howMany} left');
+  static String m0(howMany) => Intl.plural(howMany, zero: 'There are no left', one: 'There is ${howMany} left', other: 'There are ${howMany} left');
 
   @override
   final Map<String, dynamic> messages = _notInlinedMessages(_notInlinedMessages);

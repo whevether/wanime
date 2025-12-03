@@ -145,7 +145,7 @@ class LanguageLocalizations {
     );
   }
   // 已读/未读 消息
-  remainingMessage(int howMany) => Intl.plural(howMany,
+  String remainingMessage(int howMany) => Intl.plural(howMany,
       zero: 'There are no left',
       one: 'There is $howMany left',
       other: 'There are $howMany left',

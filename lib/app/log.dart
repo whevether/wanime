@@ -12,19 +12,19 @@ class Log {
     ),
   );
 
-  static d(String message) {
+  static void d(String message) {
     logger.d("${DateTime.now().toString()}\n$message");
   }
 
-  static i(String message) {
+  static void i(String message) {
     logger.i("${DateTime.now().toString()}\n$message");
   }
 
-  static e(String message, StackTrace stackTrace) {
+  static void e(String message, StackTrace stackTrace) {
     logger.e({"${DateTime.now().toString()}\n$message", null, stackTrace});
   }
 
-  static w(String message) {
+  static void w(String message) {
     logger.w("${DateTime.now().toString()}\n$message");
   }
 

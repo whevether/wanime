@@ -25,7 +25,19 @@ android {
     kotlinOptions {
         jvmTarget  = "17"
     }
-
+     packaging {
+        dex {
+            useLegacyPackaging true
+        }
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+    packaging {
+        resources {
+            excludes += "lib/**/libc++_shared.so"
+        }
+    }
     // sourceSets {
     //     main.java.srcDirs += 'src/main/kotlin'
     // }
